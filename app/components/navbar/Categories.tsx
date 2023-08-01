@@ -1,5 +1,6 @@
 import Categorylist from "./Categorylist";
 
+
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
 import { 
   GiBarn, 
@@ -18,8 +19,7 @@ import { MdOutlineVilla } from 'react-icons/md';
 
 
 import Container from "../Container";
-import { useRouter ,useSearchParams} from "next/navigation";
-import { useCallback } from "react";
+
 
 export const categories = [
     {
@@ -105,15 +105,7 @@ export const categories = [
 
 const Categories=()=> {
 
-  const router = useRouter();
-  const params = useSearchParams();
-
-  const handleClick = useCallback(
-    () => {
-      callback
-    },
-    [input],
-  )
+ 
 
 
 
