@@ -18,6 +18,8 @@ import { MdOutlineVilla } from 'react-icons/md';
 
 
 import Container from "../Container";
+import { useRouter ,useSearchParams} from "next/navigation";
+import { useCallback } from "react";
 
 export const categories = [
     {
@@ -103,13 +105,24 @@ export const categories = [
 
 const Categories=()=> {
 
+  const router = useRouter();
+  const params = useSearchParams();
+
+  const handleClick = useCallback(
+    () => {
+      callback
+    },
+    [input],
+  )
+
+
 
   return (
     <Container>
         <div className="pt-4 flex flex-row 
         items-center justify-between overflow-x-auto ">
             {categories.map((cat)=>(
-            <Categorylist key={cat.label} icon={cat.icon} label={cat.label} />
+            <Categorylist selected={true} key={cat.label} icon={cat.icon} label={cat.label} />
             )
             )}
       
@@ -121,3 +134,5 @@ const Categories=()=> {
 }
 
 export default Categories
+
+

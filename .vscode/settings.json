@@ -2,5 +2,8 @@
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.fontSize": 16,
-  "editor.lineHeight": 1.4
+  "editor.lineHeight": 1.4,
+  "json.schemaDownload.enable": true,
+  
+  
 }
