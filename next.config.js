@@ -4,7 +4,9 @@ const nextConfig = {
         'react-icons': {
           transform: 'react-icons/{{member}}',
         },
-          typescript: {
+ 
+      },
+    typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
@@ -12,7 +14,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
         
-      },
 
 }
 
