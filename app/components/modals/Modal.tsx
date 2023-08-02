@@ -34,7 +34,6 @@ const Modal: React.FC<Modelprops> = (
     secondaryActionLabel }
 ) => {
 const store= useRegisterModal()
-
   const [showModel, setShowModel] = useState(isOpen)
   useEffect(() => {
     setShowModel(isOpen)

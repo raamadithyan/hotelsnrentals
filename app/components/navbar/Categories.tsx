@@ -1,3 +1,5 @@
+'use client';
+
 import Categorylist from "./Categorylist";
 
 
@@ -19,6 +21,7 @@ import { MdOutlineVilla } from 'react-icons/md';
 
 
 import Container from "../Container";
+import { usePathname, useSearchParams } from "next/navigation";
 
 
 export const categories = [
@@ -105,8 +108,18 @@ export const categories = [
 
 const Categories=()=> {
 
- 
+const params = useSearchParams()
+const pathname = usePathname()
 
+const category = params?.get('category');
+
+const isMainPAge = pathname ==='/';
+
+if(!isMainPAge){
+  return null;
+}
+ 
+// console.log(category)
 
 
   return (
@@ -114,7 +127,7 @@ const Categories=()=> {
         <div className="pt-4 flex flex-row 
         items-center justify-between overflow-x-auto ">
             {categories.map((cat)=>(
-            <Categorylist selected={true} key={cat.label} icon={cat.icon} label={cat.label} />
+            <Categorylist selected={category===cat.label} key={cat.label} icon={cat.icon} label={cat.label} />
             )
             )}
       
