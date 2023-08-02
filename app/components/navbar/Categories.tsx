@@ -26,7 +26,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export const categories = [
     {
-      label: 'Beach',
+      label: 'Beachy',
       icon: TbBeach,
       description: 'This property is close to the beach!',
     },
