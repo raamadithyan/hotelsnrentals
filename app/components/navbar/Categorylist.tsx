@@ -50,10 +50,10 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,icon:Icon,selected}) =
     <div className={`
     flex flex-col items-center cursor-pointer
     text-black px-6
-    border
-   hover:text-neutral-500 transition
-    ${selected?'border-b-neutral-800':'border-transparent'}
-    ${selected?'text-neutral-800':'text-neutral-500'}
+    border-b-2
+   hover:text-red-500 transition
+    ${selected?'border-b-red-500':'border-transparent'}
+    ${selected?'text-red-500':'text-neutral-500'}
 
   `}>
     <Icon onClick={handleClick} size={24}/>
