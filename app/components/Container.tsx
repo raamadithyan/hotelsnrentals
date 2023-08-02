@@ -1,4 +1,4 @@
-
+'use client';
 interface Countainerprops {
     children:React.ReactNode;
 }
