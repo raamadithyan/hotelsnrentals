@@ -11,14 +11,14 @@ import useRegisterModal from '@/app/hooks/useRegisterModel';
 
 function Login() {
 const store= useRegisterModal()
-const rentModal = useRentModal()
+const rent = useRentModal()
 
 const onRent = useCallback(()=>{
 
-  rentModal.onOpen()
+  rent.onOpen()
 
 
-},[rentModal])
+},[rent])
 
   const [loginOpen, setloginOpen] = useState(false);
   const ref = useRef()
