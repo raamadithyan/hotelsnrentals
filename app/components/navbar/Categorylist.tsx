@@ -1,19 +1,19 @@
 'use client';
 
-import { IconType } from "react-icons/lib";
-
+import Image from 'next/image'
 import qs from 'query-string'
 import { useRouter ,useSearchParams} from "next/navigation";
 import { useCallback } from "react";
+import { StaticImageData } from "next/image";
 
 interface CategorieslistProp {
     
-    icon:IconType;
     label:string;
     selected:boolean;
+    city:StaticImageData;
     // hrllo:Number;
 }
-const Categorylist:React.FC<CategorieslistProp> = ({label,icon:Icon,selected}) => {
+const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
    const router = useRouter();
   const params = useSearchParams();
 
@@ -47,17 +47,23 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,icon:Icon,selected}) =
     [label,params,router],
   )
   return (
-    <div className={`
+    <div onClick={handleClick} className={`
     flex flex-col items-center cursor-pointer
-    text-black px-6
+    text-black px-6 pb-2
     border-b-2
    hover:text-red-500 transition
     ${selected?'border-b-red-500':'border-transparent'}
     ${selected?'text-red-500':'text-neutral-500'}
 
   `}>
-    <Icon onClick={handleClick} size={24}/>
-    <div className="font-small text-sm">{label}</div>
+    
+    <Image
+      src={city}
+      width={50}
+      
+      alt=""
+    />
+    <div className="font-semibold text-sm">{label}</div>
     </div>
   )
 }
