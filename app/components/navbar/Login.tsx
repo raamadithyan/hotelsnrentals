@@ -1,14 +1,24 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef,useCallback } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RxAvatar } from 'react-icons/rx'
 import Menuitem from './Menuitem';
 import useRegisterModal from '@/app/hooks/useRegisterModel';
 
+ import useRentModal from '@/app/hooks/useRentModal';
+
 
 function Login() {
 const store= useRegisterModal()
+const rentModal = useRentModal()
+
+const onRent = useCallback(()=>{
+
+  rentModal.onOpen()
+
+
+},[rentModal])
 
   const [loginOpen, setloginOpen] = useState(false);
   const ref = useRef()
@@ -33,17 +43,19 @@ const store= useRegisterModal()
 
   // )},[isOpen])
 
+  
+
   return (
 
     <div ref={ref} className="relative  mr-4 md:mr-16">
       <div className="flex flex-row items-center ">
         <div
-          onClick={() => { }}
+          onClick={onRent}
           className="hidden sm:block text-sm font-semibold
          py-3 px-4 rounded-full transition cursor-pointer text-red-500
           hover:shadow-md"
         >
-          Join the Family
+          Explore Rentels
         </div>
         <div onClick={handleloginOpen}
           className="p-4 md:py-1 md:px-2 border=[1px] text-red-500
