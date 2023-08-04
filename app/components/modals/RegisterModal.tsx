@@ -98,7 +98,7 @@ const footerContent = <div className='flex flex-col gap-4'>
     title='Register' 
     isOpen={store.isOpen}
     onClose={store.onClose}
-    actionLabel='Continue'
+    label='Continue'
     onSubmit={handleSubmit(onSubmit)}
     body={bodyContent }
     footer={footerContent}

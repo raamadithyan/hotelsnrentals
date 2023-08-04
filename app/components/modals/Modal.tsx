@@ -8,7 +8,7 @@ import Button from '../navbar/Button'
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillGithub } from 'react-icons/ai';
 
-interface Modelprops {
+interface Modalprops {
   isOpen?: boolean;
   onClose?: () => void;
   onSubmit?: () => void;
@@ -19,9 +19,10 @@ interface Modelprops {
   disabled?: boolean;
   secondaryAction?: () => void;
   secondaryActionLabel?: string;
+  label?:string;
 }
 
-const Modal: React.FC<Modelprops> = (
+const Modal: React.FC<Modalprops> = (
   { isOpen,
     onClose,
     onSubmit,
@@ -31,7 +32,8 @@ const Modal: React.FC<Modelprops> = (
     actionLabel,
     disabled,
     secondaryAction,
-    secondaryActionLabel }
+    secondaryActionLabel,
+    label }
 ) => {
 const store= useRegisterModal()
   const [showModel, setShowModel] = useState(isOpen)
@@ -90,14 +92,17 @@ const store= useRegisterModal()
     "
       >
         <div className="
-        relative
-        w-full
+         
+        overflow-y-scroll
+        w-[100vh]
+        h-[100%]
+
         md:w-4/6
         lg:w-3/6
         xl:w-2/5
-        my-6
+        xl:overflow-y-hidden
+        
         mx-auto
-        h-full
         lg:h-auto
         md:h-auto
       
@@ -112,17 +117,14 @@ const store= useRegisterModal()
           `
           }>
             <div className="
-          translate
-          h-full
-          lg:h-auto
-          md:h-auto
+            h-fit
+            md:h-auto
           border-0
           rounded-lg
           shadow-lg
           relative
           flex
           flex-col
-          w-full
           bg-white
           outline-none
           focus:outline-none
@@ -148,7 +150,7 @@ const store= useRegisterModal()
               left-9
               lg:border
               ' >
-                  <IoMdClose onClick={store.onClose} size={16} />
+                  <IoMdClose onClick={onClose} size={16} />
                 </button>
                 <div className='
                  text-[1rem] font-bold text-xl font-sans
@@ -184,7 +186,7 @@ const store= useRegisterModal()
                 disabled={disabled}
                 // label={actionLabel}
                 // icon={IoMdClose} 
-                label='Continue'
+                label={label}
                 />
         
                 </div>
@@ -192,8 +194,9 @@ const store= useRegisterModal()
              
               </div>
             </div>
-          </div>
         </div>
+          </div>
+
       </div>
     </>
   )

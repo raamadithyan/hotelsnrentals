@@ -1,5 +1,6 @@
 import './globals.css'
 import Navbar from './components/navbar/Navbar'
+import RentModal from './components/modals/rentModal';
 import RegisterModal from './components/modals/RegisterModal';
 import ToasterProvider from './providers/ToasterProvider';
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ToasterProvider/>
+        <RentModal/>
         <RegisterModal
            />
         <Navbar />

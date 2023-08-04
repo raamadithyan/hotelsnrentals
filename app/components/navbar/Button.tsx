@@ -9,11 +9,12 @@ interface ButtonProps{
     outline?:boolean;
     small?:boolean;
     icon?:IconType;
+    actionLabel?:string;
 }
 
 
 const Button:React.FC<ButtonProps>=({
-    label,onClick,disabled,outline,small,icon:Icon
+    label,onClick,disabled,outline,small,icon:Icon,actionLabel
 })=> {
   return (
     <button
