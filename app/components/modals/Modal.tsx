@@ -143,14 +143,16 @@ const store= useRegisterModal()
             
                 <button className='
               p-1
-              sm:uborder-0
+              sm:border-0
               hover:opacity-70
               transition
+
               absolute
               left-9
               lg:border
+
               ' >
-                  <IoMdClose onClick={onClose} size={16} />
+                  <IoMdClose className="-translate-x-3" onClick={onClose} size={24} />
                 </button>
                 <div className='
                  text-[1rem] font-bold text-xl font-sans

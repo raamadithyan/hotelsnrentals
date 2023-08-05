@@ -49,7 +49,7 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
   return (
     <div onClick={handleClick} className={`
     flex flex-col items-center cursor-pointer
-    text-black px-6 pb-2
+    text-black px-6 pb-1 md:pb-2
     border-b-2
    hover:text-red-500 transition
     ${selected?'border-b-red-500':'border-transparent'}
@@ -57,9 +57,15 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
 
   `}>
     
-    <Image
+    <Image className='
+    w-8 
+
+    filter
+    md:w-12 
+    lg:w-12 
+    xl:16  '
       src={city}
-      width={50}
+      // width={50}
       
       alt=""
     />
