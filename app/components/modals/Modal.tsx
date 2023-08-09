@@ -5,8 +5,8 @@ import { useState, useEffect, useCallback } from "react";
 import useRegisterModal from '@/app/hooks/useRegisterModel';
 
 import Button from '../navbar/Button'
-import { FcGoogle } from 'react-icons/fc';
-import { AiFillGithub } from 'react-icons/ai';
+// import { FcGoogle } from 'react-icons/fc';
+// import { AiFillGithub } from 'react-icons/ai';
 
 interface Modalprops {
   isOpen?: boolean;
@@ -17,9 +17,10 @@ interface Modalprops {
   footer?: React.ReactElement;
   actionLabel?: string;
   disabled?: boolean;
-  secondaryAction?: () => void;
   secondaryActionLabel?: string;
   label?:string;
+  secondaryAction?:()=>void;
+
 }
 
 const Modal: React.FC<Modalprops> = (
@@ -143,14 +144,16 @@ const store= useRegisterModal()
             
                 <button className='
               p-1
-              sm:uborder-0
+               
               hover:opacity-70
               transition
+
               absolute
               left-9
-              lg:border
+              
+
               ' >
-                  <IoMdClose onClick={onClose} size={16} />
+                  <IoMdClose className="-translate-x-4" onClick={onClose} size={24} />
                 </button>
                 <div className='
                  text-[1rem] font-bold text-xl font-sans
@@ -184,7 +187,8 @@ const store= useRegisterModal()
                 <Button 
                 onClick={handleSubmit}
                 disabled={disabled}
-                // label={actionLabel}
+                actionLabel={actionLabel}
+
                 // icon={IoMdClose} 
                 label={label}
                 />

@@ -67,10 +67,12 @@ const onRent = useCallback(()=>{
           <AiOutlineMenu />
           <RxAvatar size={30} className='text-red-500' />
           {loginOpen &&
-            <div className='absolute top-12 right-0 w-32 h-fit bg-white shadow-md'>
+            <div className='absolute top-12 right-0 w-full h-fit bg-white shadow-md'>
               <div className="flex flex-col justify-center cursor-pointer">
                 <Menuitem onClick={store.onOpen} label={'Login'} />
                 <Menuitem onClick={store.onOpen} label={'Signup'} />
+                <Menuitem onClick={()=>{}} label='My Reservations' />
+
               </div>
 
             </div>

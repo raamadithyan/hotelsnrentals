@@ -70,13 +70,13 @@ const footerContent = <div className='flex flex-col gap-4'>
                 <Button  outline
                 onClick={()=>{}}
                 icon={FcGoogle} 
-                label='Continue with Google'
+                actionLabel='Continue with Google'
                 />
 
                 <Button  outline
                 onClick={()=>{}}
                 icon={AiFillGithub} 
-                label='Continue with Github'
+                actionLabel='Continue with Github'
                 />
                 <div className='flex gap-2'>
                   <div>Already a member?</div>
@@ -98,7 +98,7 @@ const footerContent = <div className='flex flex-col gap-4'>
     title='Register' 
     isOpen={store.isOpen}
     onClose={store.onClose}
-    label='Continue'
+    actionLabel='Continue'
     onSubmit={handleSubmit(onSubmit)}
     body={bodyContent }
     footer={footerContent}
