@@ -13,10 +13,10 @@ interface CategoryinputProps {
 const Categoryinput:React.FC<CategoryinputProps> = (
 {city,label,selected,onClick}) => { 
 	return ( 
-		<div className=" border-2
+		<div className={` border-2
  rounded-xl p-2 md:px-4 flex flex-col items-center group hover:border-red-500 
- cursor-pointer 
- ">
+ cursor-pointer ${selected?'border-red-500':'border-neutral-300'} 
+ `}>
  <Image className="w-12 
 md:w-16" src={city} alt=""/> 
 <div className="group-hover:text-red-500">{label}</div>

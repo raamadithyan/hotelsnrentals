@@ -52,7 +52,7 @@ const Button:React.FC<ButtonProps>=({
       top-3
       "
       />}
-      {actionLabel}</button>
+      {label}</button>
   )
 }
 
