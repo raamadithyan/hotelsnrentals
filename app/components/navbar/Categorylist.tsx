@@ -1,10 +1,12 @@
 'use client';
 
+
 import Image from 'next/image'
 import qs from 'query-string'
 import { useRouter ,useSearchParams} from "next/navigation";
 import { useCallback } from "react";
 import { StaticImageData } from "next/image";
+import useFetchState from '@/app/hooks/useFetchState';
 
 interface CategorieslistProp {
     
@@ -16,6 +18,7 @@ interface CategorieslistProp {
 const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
    const router = useRouter();
   const params = useSearchParams();
+  const fetch = useFetchState()
 
   const handleClick = useCallback(
     () => {
@@ -43,6 +46,8 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
       })
 
       router.push(url)
+
+      fetch.onFetch()
     },
     [label,params,router],
   )
@@ -57,7 +62,7 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
 
   `}>
     
-    <Image className='
+    <Image onClick={()=>fetch.onFetch()} className='
     w-8 
 
     filter

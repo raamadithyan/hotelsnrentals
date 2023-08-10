@@ -1,13 +1,20 @@
 import {Roboto} from 'next/font/google';
-
+ import useFetchState from './hooks/useFetchState';
+ import Fetching from './components/fetches/Fetching';
 
 export default function Home() {
+
+const fetch =  useFetchState()
+
   return (
-    <main className="z-10 absolute top-[90%] left-[50%] translate-x-[-50%]">
-    <div>
-    Rent Modal Steps
+    <main className="-z-10 absolute top-[30%]  border-2 border-red-500 w-[100vw] ">
+    <div className='m-16 border-2 border-red-500'>
+    <Fetching isOpen={fetch.isFetch}  />
+    
+   
     
     </div> 
+    
     
     </main> 
   )
