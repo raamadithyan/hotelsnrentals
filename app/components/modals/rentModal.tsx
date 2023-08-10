@@ -8,6 +8,8 @@ import Modal from "./Modal";
 import useRentModal from "@/app/hooks/useRentModal";
 import { categories } from "../navbar/Categories";
  import Categoryinput from "../input/Categoryinput";
+ import Countryselect from "../input/Countryselect";
+
 
 enum STEPS  {
 CATEGORY=0,
@@ -97,7 +99,11 @@ const RentModal = () => {
 	if(steps===STEPS.LOCATION){
 		bodycontent=(
 			<div>
-				hvgjg
+				<Heading
+				title="Wher is your place located?"
+				subtitle="Help Guests find you"
+				/>
+				<Countryselect/>  
 			</div>
 			)
 
