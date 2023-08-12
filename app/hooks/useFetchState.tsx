@@ -1,3 +1,4 @@
+ 
 import {create} from 'zustand';
 
 
@@ -11,7 +12,7 @@ interface FetchStateStore {
 
 const useFetchState=create<FetchStateStore>((set)=>({
 isFetch:false,
-onFetch:()=> set({isFetch:true}),
+onFetch:()=> set((state) => ({ isFetch: !state.isFetch})),
 
 }))
 

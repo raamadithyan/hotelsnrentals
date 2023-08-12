@@ -20,49 +20,50 @@ const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
   const params = useSearchParams();
   const fetch = useFetchState()
 
+
   const handleClick = useCallback(
     () => {
-      let currentQuery = {}
+      // let currentQuery = {}
 
-      if(params){
-        currentQuery=qs.parse(params.toString())
-      }
+      // if(params){
+      //   currentQuery=qs.parse(params.toString())
+      // }
 
-      const updatedQuery:any = {
-        ...currentQuery,
-        category:label
-      }
+      // const updatedQuery:any = {
+      //   ...currentQuery,
+      //   category:label
+      // }
 
-      if(params?.get('category')===label){
-        delete updatedQuery.category;
-      }
+      // if(params?.get('category')===label){
+      //   delete updatedQuery.category;
+      // }
 
-      const url = qs.stringifyUrl({
-        url:'/',
-        query:updatedQuery
-      },
-      { 
-        skipNull:true
-      })
+      // const url = qs.stringifyUrl({
+      //   url:'/',
+      //   query:updatedQuery
+      // },
+      // { 
+      //   skipNull:true
+      // })
 
-      router.push(url)
-
-      fetch.onFetch()
+      // router.push(url)
+      console.log(fetch.onFetch())
+      // fetch.isFetch
     },
-    [label,params,router],
+    [],
   )
   return (
-    <div onClick={handleClick} className={`
+    <div onClick={()=>{fetch.onFetch()}} className={`
     flex flex-col items-center cursor-pointer
-    text-black px-6 pb-1 md:pb-2
-    border-b-2
+    text- px-6 pb-1 md:pb-2 
+  
    hover:text-red-500 transition
     ${selected?'border-b-red-500':'border-transparent'}
     ${selected?'text-red-500':'text-neutral-500'}
 
   `}>
     
-    <Image onClick={()=>fetch.onFetch()} className='
+    <Image onClick={()=>{}} className='
     w-8 
 
     filter
