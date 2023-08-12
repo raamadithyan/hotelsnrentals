@@ -20,7 +20,7 @@ const Fetching= async  () => {
 
 	const res = await fetch(url,options)
 	      const data = await res.json();
-	            const result =  data.results;
+	            const result = await data.results;
 	            // console.log(isOpen)
 
 
@@ -28,7 +28,7 @@ const Fetching= async  () => {
 		<div className="flex flex-wrap justify-center gap-12 
 			 ">
 		{
-			 result.map((res)=>(
+			   result && result.map((res)=>(
 				<FetchedComponent
 				key={res.id} 
 				img={res.images[0]}
