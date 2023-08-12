@@ -1,10 +1,12 @@
 'use client';
 
+
 import Image from 'next/image'
 import qs from 'query-string'
 import { useRouter ,useSearchParams} from "next/navigation";
 import { useCallback } from "react";
 import { StaticImageData } from "next/image";
+import useFetchState from '@/app/hooks/useFetchState';
 
 interface CategorieslistProp {
     
@@ -16,48 +18,52 @@ interface CategorieslistProp {
 const Categorylist:React.FC<CategorieslistProp> = ({label,selected,city}) => {
    const router = useRouter();
   const params = useSearchParams();
+  const fetch = useFetchState()
+
 
   const handleClick = useCallback(
     () => {
-      let currentQuery = {}
+      // let currentQuery = {}
 
-      if(params){
-        currentQuery=qs.parse(params.toString())
-      }
+      // if(params){
+      //   currentQuery=qs.parse(params.toString())
+      // }
 
-      const updatedQuery:any = {
-        ...currentQuery,
-        category:label
-      }
+      // const updatedQuery:any = {
+      //   ...currentQuery,
+      //   category:label
+      // }
 
-      if(params?.get('category')===label){
-        delete updatedQuery.category;
-      }
+      // if(params?.get('category')===label){
+      //   delete updatedQuery.category;
+      // }
 
-      const url = qs.stringifyUrl({
-        url:'/',
-        query:updatedQuery
-      },
-      { 
-        skipNull:true
-      })
+      // const url = qs.stringifyUrl({
+      //   url:'/',
+      //   query:updatedQuery
+      // },
+      // { 
+      //   skipNull:true
+      // })
 
-      router.push(url)
+      // router.push(url)
+      console.log(fetch.onFetch())
+      // fetch.isFetch
     },
-    [label,params,router],
+    [],
   )
   return (
-    <div onClick={handleClick} className={`
+    <div onClick={()=>{fetch.onFetch()}} className={`
     flex flex-col items-center cursor-pointer
-    text-black px-6 pb-1 md:pb-2
-    border-b-2
+    text- px-6 pb-1 md:pb-2 
+  
    hover:text-red-500 transition
     ${selected?'border-b-red-500':'border-transparent'}
     ${selected?'text-red-500':'text-neutral-500'}
 
   `}>
     
-    <Image className='
+    <Image onClick={()=>{}} className='
     w-8 
 
     filter

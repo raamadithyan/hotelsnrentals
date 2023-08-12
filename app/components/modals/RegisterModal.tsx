@@ -70,13 +70,13 @@ const footerContent = <div className='flex flex-col gap-4'>
                 <Button  outline
                 onClick={()=>{}}
                 icon={FcGoogle} 
-                actionLabel='Continue with Google'
+                label='Continue with Google'
                 />
 
                 <Button  outline
                 onClick={()=>{}}
                 icon={AiFillGithub} 
-                actionLabel='Continue with Github'
+                label='Continue with Github'
                 />
                 <div className='flex gap-2'>
                   <div>Already a member?</div>
